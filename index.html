@@ -1,96 +1,151 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rob Basnet - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rob Basnet - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href ="styles.css" />
 </head>
 <body>
+  <nav>
+    <div class="logo"><strong>Rob</strong></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <!-- Header Section -->
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Rob Basnet</h1>
-            <p>Creative Developer | CS Student | Tech Enthusiast</p>
+  <section class="hero-container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>Hi, I'm Rob Basnet</h1>
+        <h3>Web Developer | Java Developer | Software Developer </h3>
+        <p>A passionate CS student who loves blending creativity and logic to build sleek digital experiences.</p>
+        <div class="hero-buttons">
+          <a href="#contact">Hire Me</a>
+          <a href="CS Resume pdf.pdf" target="_blank">Resume</a>
         </div>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#leadership">Leadership</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    
+      </div>
+      <div class="hero-right">
+        <img src="Image/Rob.jpeg" alt="Rob Basnet Photo">
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi! I'm Rob Basnet, a passionate Computer Science student at Gettysburg College, with experience in web development, Java programming, and software engineering.</p>
-        <p>I love working on projects that challenge my creativity and problem-solving skills.</p>
-        
-        <div class="social-media">
-            <a href="https://github.com/robbasnet14" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/robbasnet-/" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/rob_basnet/" target="_blank">Instagram</a>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-tile">
+        <img src="Image/images/paint-app.png" alt="Paint App Screenshot">
+        <div class="tile-overlay">
+          <h3>Paint App</h3>
+          <a href="https://github.com/robbasnet14/Paint-App" target="_blank">GitHub</a>
+          <a href="projects/paint-demo.html" target="_blank">Live Demo</a>
         </div>
-    </section>
+      </div>
+  
+      <div class="project-tile">
+        <video autoplay muted loop>
+          <source src="videos/simulation.mp4" type="video/mp4">
+        </video>
+        <div class="tile-overlay">
+          <h3>Simulation App</h3>
+          <a href="https://github.com/robbasnet14/Simulation-App" target="_blank">GitHub</a>
+          <a href="projects/simulation-demo.html" target="_blank">Live Demo</a>
+        </div>
+      </div>
+  
+      <div class="project-tile">
+        <img src="images/rps.png" alt="Rock Paper Scissors">
+        <div class="tile-overlay">
+          <h3>Rock, Paper, Scissors</h3>
+          <a href="https://github.com/robbasnet14/RPS-Game" target="_blank">GitHub</a>
+          <a href="projects/rps-demo.html" target="_blank">Live Demo</a>
+        </div>
+      </div>
+  
+      <div class="project-tile">
+        <img src="images/project4.png" alt="Project 4">
+        <div class="tile-overlay">
+          <h3>Project 4</h3>
+          <a href="#" target="_blank">GitHub</a>
+          <a href="#" target="_blank">Live Demo</a>
+        </div>
+      </div>
+  
+      <div class="project-tile">
+        <img src="images/project5.png" alt="Project 5">
+        <div class="tile-overlay">
+          <h3>Project 5</h3>
+          <a href="#" target="_blank">GitHub</a>
+          <a href="#" target="_blank">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Paint App</strong> - A Java-based paint application using Swing for drawing, moving, and modifying shapes.</li>
-            <li><strong>Simulation App</strong> - A dynamic ecosystem simulation where flowers, bugs, and chameleons interact.</li>
-            <li><strong>Rock, Paper, Scissors Game</strong> - A fun and interactive game built using HTML, CSS, and JavaScript.</li>
-        </ul>
-    </section>
+  <section id="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-category">Technical Skills</div>
+    <div class="card-stack-container">
+      <div class="card" data-skill="Java" style="background-image: url('icons/java.webp');"></div>
+      <div class="card" data-skill="Python" style="background-image: url('icons/python.png');"></div>
+      <div class="card" data-skill="HTML" style="background-image: url('icons/html.png');"></div>
+      <div class="card" data-skill="CSS" style="background-image: url('icons/css.png');"></div>
+      <div class="card" data-skill="JavaScript" style="background-image: url('icons/js.png');"></div>
+      <div class="card" data-skill="SQL" style="background-image: url('icons/sql.jpg');"></div>
+      <div class="card" data-skill="Node.js" style="background-image: url('icons/node js .png');"></div>
+    </div>
+  
+    <div class="skills-category">Tools</div>
+    <div class="card-stack-container">
+      <div class="card" data-skill="Git" style="background-image: url('icons/git.png');"></div>
+      <div class="card" data-skill="Latex" style="background-image: url('icons/latex.png');"></div>
+    </div>
+  
+    <div class="skills-category">Frameworks</div>
+    <div class="card-stack-container">
+      <div class="card" data-skill="Java Swing" style="background-image: url('icons/javaswing.png');"></div>
+      <div class="card" data-skill="Bootstrap" style="background-image: url('icons/bootstrap.png');"></div>
+    </div>
+  
+    <div class="skills-category">Soft Skills</div>
+    <div class="card-stack-container">
+      <div class="card" data-skill="Leadership" style="background-image: url('icons/leadership.webp');"></div>
+      <div class="card" data-skill="Problem Solving" style="background-image: url('icons/Problem_Solving.webp');"></div>
+      <div class="card" data-skill="Communication" style="background-image: url('icons/communication.webp');"></div>
+      <div class="card" data-skill="Time Management" style="background-image: url('icons/time-management.png');"></div>
+      <div class="card" data-skill="Event Planning" style="background-image: url('icons/event-planning.png');"></div>
+      <div class="card" data-skill="Critical Thinking" style="background-image: url('icons/critical.png');"></div>
+    </div> 
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Java, Python, JavaScript, HTML, CSS, SQL, Node.js</li>
-            <li><strong>Frameworks & Tools:</strong> Java Swing, Bootstrap, Git, Latex</li>
-            <li><strong>Soft Skills:</strong> Critical Thinking, Team Collaboration, Leadership, Problem-Solving</li>
-        </ul>
-    </section>
+    <div class="Extra Activities">
 
-    <!-- Leadership & Experience -->
-    <section id="leadership">
-        <h2>Leadership & Experience</h2>
-        <ul>
-            <li><strong>President, SANGAM (South Asian Network for Global Awareness and Multiculturalism)</strong> - Organized cultural events like the Welcome Dinner and Diwali Celebration.</li>
-            <li><strong>ACM Member</strong> - Participated in coding challenges and hackathons to enhance problem-solving skills.</li>
-            <li><strong>House Leader (Himalayan White House International Secondary School)</strong> - Led school events and encouraged student participation.</li>
-            <li><strong>Red Cross Volunteer</strong> - Assisted in blood donation campaigns and community service programs.</li>
-        </ul>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm" action="/send" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+      <div class="Certifications">
 
-    <footer style="text-align: center; padding: 1rem; background: #2e7d32; color: white;">
-        © 2025 Rob Basnet. All Rights Reserved.
-    </footer>    
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br><br>
+      <input type="email" placeholder="Your Email" required><br><br>
+      <textarea placeholder="Your Message" required></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
+  <footer>
+    © 2025 Rob Basnet. All Rights Reserved.
+  </footer>
 </body>
 </html>
