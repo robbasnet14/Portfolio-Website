@@ -11,13 +11,18 @@
   <link rel="stylesheet" href ="styles.css" />
 </head>
 <body>
+  <canvas id="bgCanvas"></canvas>
+
   <nav>
     <div class="logo"><strong>Rob</strong></div>
-    <div class="nav-links">
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+    <div class="nav-links" id="navLinks">
       <a href="#">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#skills-section">Skills</a>
       <a href="#contact">Contact</a>
+      <button id="darkModeToggle"> Dark Mode🌙</button>
     </div>
   </nav>
 
@@ -38,59 +43,94 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="about" style="margin-bottom: 10rem;">
+    <h2>About Me</h2>
+    <div class="about-wrapper">
+      <div class="about-left">
+        <img src="Image/About me.jpeg" alt="Rob Basnet Profile" />
+      </div>
+      <div class="about-right">
+        <p>
+          I’m a passionate CS student who turns ideas into clean, creative code.
+          I enjoy building smooth web apps and scalable backend systems, and I’m especially
+          drawn to solving real-world problems with tech. Currently, I’m exploring full-stack
+          development with Java, JavaScript, and Node.js, and I love collaborating in team projects.
+        </p>
+  
+        <ul class="about-facts">
+          <li><strong>📍 Based in:</strong> Gettysburg, PA</li>
+          <li><strong>🎓 Studying:</strong> B.S. in Computer Science</li>
+          <li><strong>🏆 Fun Fact:</strong> Sports Addict!</li>
+          <li><strong>🚀 Current Goal:</strong> A big tech company intern</li>
+        </ul>
+  
+        <a href="#projects" class="btn">Check Out My Work</a>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="projects" style="margin: 6rem auto;">
     <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-tile">
-        <img src="Image/images/paint-app.png" alt="Paint App Screenshot">
+    <div class="projects-hero-wrapper">
+      <div class="project-showcase">
+        <div class="device-frame">
+          <img src="Image/Shapes App.png" alt="Paint App Screenshot">
+        </div>
         <div class="tile-overlay">
           <h3>Paint App</h3>
-          <a href="https://github.com/robbasnet14/Paint-App" target="_blank">GitHub</a>
-          <a href="projects/paint-demo.html" target="_blank">Live Demo</a>
+          <a href="https://github.com/robbasnet14/Shapes-App" target="_blank">GitHub</a>
+          <a href="Image/Shapes App Recording.mov" target="_blank">Live Demo</a>
         </div>
       </div>
   
-      <div class="project-tile">
-        <video autoplay muted loop>
-          <source src="videos/simulation.mp4" type="video/mp4">
-        </video>
+      <div class="project-showcase">
+        <div class="device-frame">
+          <img src="Image/Simulation App.png" alt="Simulation App Screenshot">
+        </div>
         <div class="tile-overlay">
           <h3>Simulation App</h3>
           <a href="https://github.com/robbasnet14/Simulation-App" target="_blank">GitHub</a>
-          <a href="projects/simulation-demo.html" target="_blank">Live Demo</a>
+          <a href="Image/Simulation-demo.mov" target="_blank">Live Demo</a>
         </div>
       </div>
   
-      <div class="project-tile">
-        <img src="images/rps.png" alt="Rock Paper Scissors">
+      <div class="project-showcase">
+        <div class="device-frame">
+          <img src="Image/Rock Paper Scissor.png" alt="Rock Paper Scissors">
+        </div>
         <div class="tile-overlay">
           <h3>Rock, Paper, Scissors</h3>
-          <a href="https://github.com/robbasnet14/RPS-Game" target="_blank">GitHub</a>
-          <a href="projects/rps-demo.html" target="_blank">Live Demo</a>
+          <a href="https://github.com/robbasnet14/Project" target="_blank">GitHub</a>
+          <a href="Image/Rock Paper Scissor Recording.mov" target="_blank">Live Demo</a>
         </div>
       </div>
   
-      <div class="project-tile">
-        <img src="images/project4.png" alt="Project 4">
+      <div class="project-showcase">
+        <div class="device-frame">
+          <img src="Image/Emergence-site.png" alt="Emergence Site">
+        </div>
         <div class="tile-overlay">
-          <h3>Project 4</h3>
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Live Demo</a>
+          <h3>Emergence Site</h3>
+          <a href="https://github.com/aryamasharma/EmergenSite" target="_blank">GitHub</a>
+          <a href="https://devpost.com/software/emergen-site" target="_blank">Live Demo</a>
         </div>
       </div>
   
-      <div class="project-tile">
-        <img src="images/project5.png" alt="Project 5">
+      <div class="project-showcase">
+        <div class="device-frame">
+          <img src="Image/Social-Justice.png" alt="Social Justice Site">
+        </div>
         <div class="tile-overlay">
-          <h3>Project 5</h3>
+          <h3>Social Justice Site</h3>
           <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Live Demo</a>
+          <a href="Image/Social-Justice-recording.mov" target="_blank">Live Demo</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills-section">
+  <section id="skills-section" style="margin-top: 6rem;">
     <h2>Skills</h2>
     <div class="skills-category">Technical Skills</div>
     <div class="card-stack-container">
@@ -125,27 +165,51 @@
       <div class="card" data-skill="Critical Thinking" style="background-image: url('icons/critical.png');"></div>
     </div> 
 
-    <div class="Extra Activities">
 
-    </div>
-
-      <div class="Certifications">
-
+      <div class="skills-section1">
+        <h2> Extra Activities</h2>
+      <div class="card-stack-container">
+      <div class="card" data-skill="Scout" style="background-image: url('icons/scout.jpg');"></div>
+      <div class="card" data-skill="Stem project" style="background-image: url('icons/stem.png');"></div>
+      <div class="card" data-skill="ACM " style="background-image: url('icons/ACM.webp');"></div>
+      <div class="card" data-skill="Sangam" style="background-image: url('icons/sangam.png');"></div>
+      <div class="card" data-skill="School Captain" style="background-image: url('icons/school\ captain.webp');"></div>
+      <div class="card" data-skill="Red Cross" style="background-image: url('icons/Red\ Cross.jpg');"></div>
+      <div class="card" data-skill="Soccer Captain" style="background-image: url('icons/Soccer\ captain.png');"></div>
+      <div class="card" data-skill="Calcaid PLA" style="background-image: url('icons/PLA.png');"></div>
+      <div class="card" data-skill="Tour Guide" style="background-image: url('icons/tour\ guide.jpg');"></div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required><br><br>
-      <input type="email" placeholder="Your Email" required><br><br>
-      <textarea placeholder="Your Message" required></textarea><br><br>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="chat-contact-wrapper">
+      <div class="chat-hero-box">
+        <div class="chat-message bot">Hi there! 👋 Let's get in touch. Fill out your details below.</div>
+        <form class="chat-form">
+          <div class="chat-input-group">
+            <label for="name">👤 Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="chat-input-group">
+            <label for="email">📧 Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="chat-input-group">
+            <label for="message">💬 Your Message</label>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+          </div>
+          <button type="submit" class="chat-submit">📨 Send</button>
+        </form>
+      </div>
+    </div>
   </section>
+
+  <button id="backToTop" onclick="scrollToTop()" aria-label="Back to Top">⬆</button>
 
   <footer>
     © 2025 Rob Basnet. All Rights Reserved.
   </footer>
+
 </body>
 </html>
