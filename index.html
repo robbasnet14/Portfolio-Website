@@ -3,212 +3,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rob Basnet - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Rob Basnet | Software Engineer Portfolio</title>
+  <meta name="description" content="Rob Basnet - Software engineer focused on full-stack web apps, machine learning systems, and polished user experiences." />
+  <meta name="theme-color" content="#0a121d" />
+  <meta property="og:title" content="Rob Basnet | Software Engineer Portfolio" />
+  <meta property="og:description" content="Full-stack and ML-focused projects with measurable impact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Image/Rob.jpeg" />
+  <meta property="og:url" content="https://your-domain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rob Basnet | Software Engineer Portfolio" />
+  <meta name="twitter:description" content="Full-stack and ML-focused projects with measurable impact." />
+  <meta name="twitter:image" content="Image/Rob.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
-  <link rel="stylesheet" href ="styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rob Basnet",
+      "url": "https://your-domain.com",
+      "email": "mailto:basnro01@gettysburg.edu",
+      "sameAs": [
+        "https://github.com/robbasnet14",
+        "https://www.linkedin.com/in/rob-basnet-0065a52a8/"
+      ],
+      "jobTitle": "Software Engineer",
+      "alumniOf": "Gettysburg College"
+    }
+  </script>
 </head>
 <body>
-  <canvas id="bgCanvas"></canvas>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <nav>
-    <div class="logo"><strong>Rob</strong></div>
-    <div class="hamburger" onclick="toggleNav()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills-section">Skills</a>
-      <a href="#contact">Contact</a>
-      <button id="darkModeToggle"> Dark Mode🌙</button>
-    </div>
-  </nav>
+  <header class="site-header" id="home">
+    <nav class="nav shell">
+      <a href="#home" class="brand">Rob Basnet</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-  <section class="hero-container">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <h1>Hi, I'm Rob Basnet</h1>
-        <h3>Web Developer | Java Developer | Software Developer </h3>
-        <p>A passionate CS student who loves blending creativity and logic to build sleek digital experiences.</p>
-        <div class="hero-buttons">
-          <a href="#contact">Hire Me</a>
-          <a href="CS Resume pdf.pdf" target="_blank">Resume</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <img src="Image/Rob.jpeg" alt="Rob Basnet Photo">
-      </div>
-    </div>
-  </section>
-
-  <section id="about" style="margin-bottom: 10rem;">
-    <h2>About Me</h2>
-    <div class="about-wrapper">
-      <div class="about-left">
-        <img src="Image/About me.jpeg" alt="Rob Basnet Profile" />
-      </div>
-      <div class="about-right">
-        <p>
-          I’m a passionate CS student who turns ideas into clean, creative code.
-          I enjoy building smooth web apps and scalable backend systems, and I’m especially
-          drawn to solving real-world problems with tech. Currently, I’m exploring full-stack
-          development with Java, JavaScript, and Node.js, and I love collaborating in team projects.
+    <section class="hero shell reveal" data-reveal>
+      <div class="hero-copy">
+        <p class="eyebrow">Software Engineer • ML + Full Stack</p>
+        <h1>Building intelligent products that look sharp and scale clean.</h1>
+        <p class="hero-text">
+          I am Rob Basnet, a Computer Science student and builder focused on production-ready web apps,
+          machine learning workflows, and reliable backend systems.
         </p>
-  
-        <ul class="about-facts">
-          <li><strong>📍 Based in:</strong> Gettysburg, PA</li>
-          <li><strong>🎓 Studying:</strong> B.S. in Computer Science</li>
-          <li><strong>🏆 Fun Fact:</strong> Sports Addict!</li>
-          <li><strong>🚀 Current Goal:</strong> A big tech company intern</li>
-        </ul>
-  
-        <a href="#projects" class="btn">Check Out My Work</a>
+        <div class="quick-facts">
+          <span>B.S. Computer Science • May 2027</span>
+          <span>Full Stack + ML</span>
+          <span>Open to internships</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary magnetic" href="#projects">View Projects</a>
+          <a class="btn btn-ghost magnetic" href="Robs-Resume-Latest.pdf" target="_blank" rel="noreferrer">View Resume</a>
+        </div>
+        <div class="motion-controls" aria-label="Animation intensity controls">
+          <span>Motion:</span>
+          <button class="motion-btn" data-motion="subtle" type="button">Subtle</button>
+          <button class="motion-btn" data-motion="balanced" type="button">Balanced</button>
+          <button class="motion-btn" data-motion="sick" type="button">Sick</button>
+        </div>
       </div>
-    </div>
-  </section>
-  
+      <div class="hero-media" id="heroMedia">
+        <img src="Image/Rob.jpeg" alt="Portrait of Rob Basnet" />
+        <div class="hero-card reveal" data-reveal>
+          <p>Open to internships and software engineering opportunities.</p>
+        </div>
+      </div>
+    </section>
+  </header>
 
-  <section id="projects" style="margin: 6rem auto;">
-    <h2>Projects</h2>
-    <div class="projects-hero-wrapper">
-      <div class="project-showcase">
-        <div class="device-frame">
-          <img src="Image/Shapes App.png" alt="Paint App Screenshot">
-        </div>
-        <div class="tile-overlay">
-          <h3>Paint App</h3>
-          <a href="https://github.com/robbasnet14/Shapes-App" target="_blank">GitHub</a>
-          <a href="Image/Shapes App Recording.mov" target="_blank">Live Demo</a>
-        </div>
+  <main>
+    <section id="about" class="section shell reveal" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow">About</p>
+        <h2>I build things and I work well with people.</h2>
       </div>
-  
-      <div class="project-showcase">
-        <div class="device-frame">
-          <img src="Image/Simulation App.png" alt="Simulation App Screenshot">
-        </div>
-        <div class="tile-overlay">
-          <h3>Simulation App</h3>
-          <a href="https://github.com/robbasnet14/Simulation-App" target="_blank">GitHub</a>
-          <a href="Image/Simulation-demo.mov" target="_blank">Live Demo</a>
-        </div>
+      <div class="about-grid">
+        <p>
+          I’m a Computer Science student at Gettysburg College (Class of 2027), with double minors in Mathematics
+          and Data Science. I like building full-stack and machine learning projects that solve real problems.
+        </p>
+        <p>
+          Outside coding, I lead student programs and campus teams. That experience made me better at communication,
+          mentoring, and getting things done under pressure.
+        </p>
       </div>
-  
-      <div class="project-showcase">
-        <div class="device-frame">
-          <img src="Image/Rock Paper Scissor.png" alt="Rock Paper Scissors">
-        </div>
-        <div class="tile-overlay">
-          <h3>Rock, Paper, Scissors</h3>
-          <a href="https://github.com/robbasnet14/Project" target="_blank">GitHub</a>
-          <a href="Image/Rock Paper Scissor Recording.mov" target="_blank">Live Demo</a>
-        </div>
-      </div>
-  
-      <div class="project-showcase">
-        <div class="device-frame">
-          <img src="Image/Emergence-site.png" alt="Emergence Site">
-        </div>
-        <div class="tile-overlay">
-          <h3>Emergence Site</h3>
-          <a href="https://github.com/aryamasharma/EmergenSite" target="_blank">GitHub</a>
-          <a href="https://devpost.com/software/emergen-site" target="_blank">Live Demo</a>
-        </div>
-      </div>
-  
-      <div class="project-showcase">
-        <div class="device-frame">
-          <img src="Image/Social-Justice.png" alt="Social Justice Site">
-        </div>
-        <div class="tile-overlay">
-          <h3>Social Justice Site</h3>
-          <a href="#" target="_blank">GitHub</a>
-          <a href="Image/Social-Justice-recording.mov" target="_blank">Live Demo</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills-section" style="margin-top: 6rem;">
-    <h2>Skills</h2>
-    <div class="skills-category">Technical Skills</div>
-    <div class="card-stack-container">
-      <div class="card" data-skill="Java" style="background-image: url('Icons/java.webp');"></div>
-      <div class="card" data-skill="Python" style="background-image: url('Icons/python.png');"></div>
-      <div class="card" data-skill="HTML" style="background-image: url('Icons/html.png');"></div>
-      <div class="card" data-skill="CSS" style="background-image: url('Icons/css.png');"></div>
-      <div class="card" data-skill="JavaScript" style="background-image: url('Icons/js.png');"></div>
-      <div class="card" data-skill="SQL" style="background-image: url('Icons/sql.jpg');"></div>
-      <div class="card" data-skill="Node.js" style="background-image: url('Icons/node js .png');"></div>
-    </div>
-  
-    <div class="skills-category">Tools</div>
-    <div class="card-stack-container">
-      <div class="card" data-skill="Git" style="background-image: url('Icons/git.png');"></div>
-      <div class="card" data-skill="Latex" style="background-image: url('Icons/latex.png');"></div>
-    </div>
-  
-    <div class="skills-category">Frameworks</div>
-    <div class="card-stack-container">
-      <div class="card" data-skill="Java Swing" style="background-image: url('icons/javaswing.png');"></div>
-      <div class="card" data-skill="Bootstrap" style="background-image: url('icons/bootstrap.png');"></div>
-    </div>
-  
-    <div class="skills-category">Soft Skills</div>
-    <div class="card-stack-container">
-      <div class="card" data-skill="Leadership" style="background-image: url('Icons/leadership.webp');"></div>
-      <div class="card" data-skill="Problem Solving" style="background-image: url('Icons/Problem_Solving.webp');"></div>
-      <div class="card" data-skill="Communication" style="background-image: url('Icons/communication.webp');"></div>
-      <div class="card" data-skill="Time Management" style="background-image: url('Icons/time-management.png');"></div>
-      <div class="card" data-skill="Event Planning" style="background-image: url('Icons/event-planning.png');"></div>
-      <div class="card" data-skill="Critical Thinking" style="background-image: url('Icons/critical.png');"></div>
-    </div> 
+    <section id="impact" class="section shell reveal" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow">Impact</p>
+        <h2>Campus and Team Contributions</h2>
+      </div>
+      <div class="impact-grid">
+        <article>
+          <h3>Resident Assistant</h3>
+          <p>Support first-year students through guidance, conflict resolution, and inclusive floor programming.</p>
+        </article>
+        <article>
+          <h3>OME Coordinator</h3>
+          <p>Coordinate events for first-generation and underrepresented students with campus partners.</p>
+        </article>
+        <article>
+          <h3>Student Lead</h3>
+          <p>Oversee daily operations, mentor staff, and manage high-volume workflows with safety standards.</p>
+        </article>
+        <article>
+          <h3>SANGAM President</h3>
+          <p>Lead cultural events including Holi and Diwali, coordinating volunteers and event execution.</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="value" class="section shell reveal" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow">Working Style</p>
+        <h2>How I show up on a team.</h2>
+      </div>
+      <div class="value-grid">
+        <article>
+          <h3>Clear Communication</h3>
+          <p>I explain technical ideas in a simple way, whether I’m teaching calculus or building with teammates.</p>
+        </article>
+        <article>
+          <h3>High Ownership</h3>
+          <p>I take projects seriously from planning to finish, with strong follow-through and reliability.</p>
+        </article>
+        <article>
+          <h3>Community Leadership</h3>
+          <p>I enjoy building inclusive communities, mentoring peers, and organizing events that bring people together.</p>
+        </article>
+      </div>
+    </section>
 
-      <div class="skills-section1">
-        <h2> Extra Activities</h2>
-      <div class="card-stack-container">
-      <div class="card" data-skill="Scout" style="background-image: url('Icons/scout.jpg');"></div>
-      <div class="card" data-skill="Stem project" style="background-image: url('Icons/stem.png');"></div>
-      <div class="card" data-skill="ACM " style="background-image: url('Icons/ACM.webp');"></div>
-      <div class="card" data-skill="Sangam" style="background-image: url('Icons/sangam.png');"></div>
-      <div class="card" data-skill="School Captain" style="background-image: url('Icons/school\ captain.webp');"></div>
-      <div class="card" data-skill="Red Cross" style="background-image: url('Icons/Red\ Cross.jpg');"></div>
-      <div class="card" data-skill="Soccer Captain" style="background-image: url('Icons/Soccer\ captain.png');"></div>
-      <div class="card" data-skill="Calcaid PLA" style="background-image: url('Icons/PLA.png');"></div>
-      <div class="card" data-skill="Tour Guide" style="background-image: url('Icons/tour\ guide.jpg');"></div>
-    </div>
-  </section>
+    <section id="projects" class="section shell">
+      <div class="section-head reveal" data-reveal>
+        <p class="eyebrow">Featured Work</p>
+        <h2>Recent Projects</h2>
+      </div>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="chat-contact-wrapper">
-      <div class="chat-hero-box">
-        <div class="chat-message bot">Hi there! 👋 Let's get in touch. Fill out your details below.</div>
-        <form class="chat-form">
-          <div class="chat-input-group">
-            <label for="name">👤 Your Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
+      <div class="project-grid">
+        <article class="project-card reveal tilt-card" data-reveal>
+          <div class="project-tag">AI + Full Stack</div>
+          <h3>AI-Powered Resume Analyzer</h3>
+          <p>
+            Built an ATS-style analyzer that parses PDF, DOCX, and TXT resumes and scores job fit using TF-IDF,
+            cosine similarity, and actionable improvement suggestions.
+          </p>
+          <ul>
+            <li>Python, FastAPI, scikit-learn, Docker, React</li>
+            <li>REST API with Pydantic validation and containerized deployment</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-action" href="#" target="_blank" rel="noreferrer">Open Live App ↗</a>
+            <a class="project-action" href="https://github.com/robbasnet14/Resume-Analyzer" target="_blank" rel="noreferrer">Repo ↗</a>
           </div>
-          <div class="chat-input-group">
-            <label for="email">📧 Your Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
+        </article>
+
+        <article class="project-card reveal tilt-card" data-reveal>
+          <div class="project-tag">AI + Full Stack</div>
+          <h3>MeriKatha <span class="project-mini-label">Hackathon Project</span></h3>
+          <p>
+            An AI-powered storytelling and journaling platform that helps users turn personal moments into polished
+            narratives in their own voice.
+          </p>
+          <ul>
+            <li>Next.js, TypeScript, Tailwind CSS, Supabase, OpenAI API, Vercel</li>
+            <li>Built auth, AI story generation, and save/publish flow for end-to-end creation in minutes</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-action" href="https://merikatha.vercel.app" target="_blank" rel="noreferrer">Open Live App ↗</a>
+            <a class="project-action" href="https://github.com/robbasnet/merikatha" target="_blank" rel="noreferrer">Repo ↗</a>
           </div>
-          <div class="chat-input-group">
-            <label for="message">💬 Your Message</label>
-            <textarea id="message" placeholder="Type your message here..." required></textarea>
+        </article>
+
+        <article class="project-card reveal tilt-card" data-reveal>
+          <div class="project-tag">Machine Learning</div>
+          <h3>Soccer Match Prediction Platform</h3>
+          <p>
+            Trained five Random Forest models to forecast outcomes, xG, and betting markets, then calibrated
+            probabilities with Isotonic Regression for stronger prediction reliability.
+          </p>
+          <ul>
+            <li>Python, scikit-learn, React 19, Vite, Tailwind</li>
+            <li>Live prediction dashboard with win probabilities and scoreline candidates</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-action" href="#" target="_blank" rel="noreferrer">Open Live App ↗</a>
+            <a class="project-action" href="https://github.com/robbasnet14/Pl-match-prediction" target="_blank" rel="noreferrer">Repo ↗</a>
           </div>
-          <button type="submit" class="chat-submit">📨 Send</button>
+        </article>
+
+        <article class="project-card reveal tilt-card" data-reveal>
+          <div class="project-tag">Team Project</div>
+          <h3>SafeZone AI</h3>
+          <p>
+            Led frontend engineering for an emergency-response app with map-based evacuation views and AI-powered
+            guidance using Google Gemini integration.
+          </p>
+          <ul>
+            <li>React, TypeScript, Node.js, Express, Leaflet, Firebase</li>
+            <li>Real-time alerts, routing, and chatbot fallback handling</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-action" href="#" target="_blank" rel="noreferrer">Open Live App ↗</a>
+            <a class="project-action" href="https://github.com/aryamasharma/EmergenSite" target="_blank" rel="noreferrer">Repo ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal tilt-card" data-reveal>
+          <div class="project-tag">Data + Backend</div>
+          <h3>Premier League Club & Player Database</h3>
+          <p>
+            Developed a full-stack stats platform serving 500+ players with multi-filter search, integrating a Python
+            data pipeline with a Spring Boot backend and React frontend.
+          </p>
+          <ul>
+            <li>Java, Spring Boot, React, Python, SCSS</li>
+            <li>Scraping, cleaning, and normalized data ingestion workflows</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-action" href="#" target="_blank" rel="noreferrer">Open Live App ↗</a>
+            <a class="project-action" href="https://github.com/robbasnet14/Pl-Player-and-Stats" target="_blank" rel="noreferrer">Repo ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section shell reveal" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow">Stack</p>
+        <h2>Tools I ship with.</h2>
+      </div>
+      <div class="skill-lanes">
+        <div class="skill-lane"><span>Python</span><span>Java</span><span>TypeScript</span><span>C/C++</span><span>SQL</span></div>
+        <div class="skill-lane"><span>React</span><span>Spring Boot</span><span>FastAPI</span><span>Node.js</span><span>Express</span><span>GraphQL</span></div>
+        <div class="skill-lane"><span>Docker</span><span>Git</span><span>Firebase</span><span>Vite</span><span>Framer Motion</span><span>Maven</span></div>
+        <div class="skill-lane"><span>scikit-learn</span><span>NumPy</span><span>pandas</span><span>TF-IDF</span><span>Random Forest</span></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section shell reveal" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Leadership and campus experience.</h2>
+      </div>
+      <div class="exp-grid">
+        <article>
+          <h3>Resident Assistant</h3>
+          <p class="exp-meta">Gettysburg College • Aug 2024 - Present</p>
+          <p>Support first-year students with guidance, resources, and conflict resolution in a safe, welcoming community.</p>
+        </article>
+        <article>
+          <h3>OME Program Coordinator</h3>
+          <p class="exp-meta">Gettysburg College • Sep 2024 - Present</p>
+          <p>Plan events and cultural-awareness programs for first-generation and underrepresented students.</p>
+        </article>
+        <article>
+          <h3>Student Lead, Bullet Hole</h3>
+          <p class="exp-meta">Gettysburg, PA • Aug 2023 - Present</p>
+          <p>Run day-to-day operations, mentor teammates, and manage fast-paced service periods.</p>
+        </article>
+        <article>
+          <h3>Peer Learning Assistant (Calculus)</h3>
+          <p class="exp-meta">Gettysburg College • Aug 2024 - Present</p>
+          <p>Help students break down calculus problems and build confidence in their problem-solving skills.</p>
+        </article>
+        <article>
+          <h3>Tour Guide</h3>
+          <p class="exp-meta">Gettysburg College • Aug 2024 - Present</p>
+          <p>Lead campus tours and answer questions from students and families about academics and student life.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section shell reveal" data-reveal>
+      <div class="contact-card">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s connect.</h2>
+        <p>Email: <a href="mailto:basnro01@gettysburg.edu">basnro01@gettysburg.edu</a></p>
+        <p>GitHub: <a href="https://github.com/robbasnet14" target="_blank" rel="noreferrer">github.com/robbasnet14</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rob-basnet-0065a52a8/" target="_blank" rel="noreferrer">linkedin.com/in/rob-basnet-0065a52a8</a></p>
+        <p>Availability: Summer internship and part-time software roles</p>
+        <form id="contactForm" class="contact-form">
+          <label for="contactName">Name</label>
+          <input id="contactName" name="name" type="text" required maxlength="80" />
+
+          <label for="contactEmail">Email</label>
+          <input id="contactEmail" name="email" type="email" required maxlength="120" />
+
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" rows="5" required maxlength="1200"></textarea>
+
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p id="contactStatus" class="contact-status" aria-live="polite"></p>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <button id="backToTop" onclick="scrollToTop()" aria-label="Back to Top">⬆</button>
-
-  <footer>
-    © 2025 Rob Basnet. All Rights Reserved.
+  <footer class="footer shell">
+    <p>© 2026 Rob Basnet. Crafted for modern software opportunities.</p>
   </footer>
 
 </body>
