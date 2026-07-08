@@ -7,17 +7,18 @@ const heroMedia = document.getElementById("heroMedia");
 const tiltCards = document.querySelectorAll(".tilt-card");
 const magneticButtons = document.querySelectorAll(".magnetic");
 const motionButtons = document.querySelectorAll(".motion-btn");
-const placeholderLiveLinks = document.querySelectorAll('.project-links a[href="#"]');
 const contactForm = document.getElementById("contactForm");
 const contactStatus = document.getElementById("contactStatus");
+const FALLBACK_EMAIL = "basnro01@gettysburg.edu";
 
 const MOTION_MODES = {
   subtle: { tilt: 0.45, magnetic: 0.04, revealDelay: 20 },
   balanced: { tilt: 1, magnetic: 0.1, revealDelay: 50 },
-  sick: { tilt: 1.55, magnetic: 0.16, revealDelay: 80 },
+  bold: { tilt: 1.55, magnetic: 0.16, revealDelay: 80 },
 };
 
 let currentMode = localStorage.getItem("motionMode") || "balanced";
+if (currentMode === "sick") currentMode = "bold";
 if (!MOTION_MODES[currentMode]) currentMode = "balanced";
 
 function getMotion() {
@@ -27,7 +28,7 @@ function getMotion() {
 function applyMotionMode(mode) {
   currentMode = mode;
   localStorage.setItem("motionMode", mode);
-  document.body.classList.remove("motion-subtle", "motion-balanced", "motion-sick");
+  document.body.classList.remove("motion-subtle", "motion-balanced", "motion-bold", "motion-sick");
   document.body.classList.add(`motion-${mode}`);
   motionButtons.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.motion === mode);
@@ -126,18 +127,13 @@ magneticButtons.forEach((button) => {
   });
 });
 
-placeholderLiveLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-  });
-});
-
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!contactStatus) return;
 
     const formData = new FormData(contactForm);
+    const formEndpoint = contactForm.dataset.formEndpoint?.trim();
     const payload = {
       name: String(formData.get("name") || "").trim(),
       email: String(formData.get("email") || "").trim(),
@@ -145,47 +141,77 @@ if (contactForm) {
     };
 
     contactStatus.className = "contact-status";
+    contactStatus.textContent = "Preparing message...";
+
+    if (String(formData.get("_gotcha") || "").trim()) {
+      contactStatus.textContent = "Message sent successfully.";
+      contactForm.reset();
+      return;
+    }
+
+    if (!payload.name || !payload.email || !payload.message) {
+      contactStatus.className = "contact-status error";
+      contactStatus.textContent = "Name, email, and message are required.";
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      contactStatus.className = "contact-status error";
+      contactStatus.textContent = "Please enter a valid email address.";
+      return;
+    }
+
+    function showFallback(message) {
+      const subject = encodeURIComponent(`Portfolio Message from ${payload.name}`);
+      const body = encodeURIComponent(`Name: ${payload.name}\nEmail: ${payload.email}\n\nMessage:\n${payload.message}`);
+      const mailtoHref = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
+
+      contactStatus.className = "contact-status error";
+      contactStatus.textContent = "";
+      contactStatus.append(document.createTextNode(`${message} `));
+
+      const emailLink = document.createElement("a");
+      emailLink.href = mailtoHref;
+      emailLink.textContent = FALLBACK_EMAIL;
+      emailLink.rel = "noreferrer";
+
+      contactStatus.append(emailLink);
+      contactStatus.append(document.createTextNode("."));
+      window.location.href = mailtoHref;
+    }
+
+    if (!formEndpoint) {
+      showFallback("Email service is not configured yet. Opening your email app to send this message to");
+      return;
+    }
+
     contactStatus.textContent = "Sending...";
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(formEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...payload,
+          _subject: `Portfolio Message from ${payload.name}`,
+        }),
       });
 
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
-        throw new Error(data.error || "Could not send message right now. Please email basnro01@gettysburg.edu.");
+        const serviceError = Array.isArray(data.errors) ? data.errors.map((item) => item.message).join(" ") : data.error;
+        throw new Error(serviceError || "Could not send message right now.");
       }
 
       contactStatus.className = "contact-status success";
       contactStatus.textContent = "Message sent successfully.";
       contactForm.reset();
     } catch (error) {
-      contactStatus.className = "contact-status error";
-
-      const rawMessage = error instanceof Error ? error.message : "Failed to send message.";
-      const emailMatch = rawMessage.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
-
-      if (emailMatch) {
-        const emailAddress = emailMatch[0];
-        const cleaned = rawMessage.replace(emailAddress, "").replace(/\s+/g, " ").trim();
-        const prefix = cleaned ? cleaned.replace(/[.:]$/, "") : "Could not send message right now. Please email";
-
-        contactStatus.textContent = "";
-        contactStatus.append(document.createTextNode(`${prefix} `));
-
-        const emailLink = document.createElement("a");
-        emailLink.href = `mailto:${emailAddress}`;
-        emailLink.textContent = emailAddress;
-        emailLink.rel = "noreferrer";
-
-        contactStatus.append(emailLink);
-        contactStatus.append(document.createTextNode("."));
-      } else {
-        contactStatus.textContent = rawMessage || "Failed to send message.";
-      }
+      const rawMessage = error instanceof Error ? error.message : "Could not send message right now.";
+      showFallback(`${rawMessage} Opening your email app to send this message to`);
     }
   });
 }
