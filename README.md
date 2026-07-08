@@ -1,15 +1,15 @@
 # Portfolio Website
 
-Personal portfolio for Rob Basnet. It can be hosted as a static site on Vercel or GitHub Pages.
+Personal portfolio for Rob Basnet, deployed as a static site on Vercel.
 
-https://robbasnet14.github.io/Portfolio-Website/
+https://robbasnet.vercel.app
 
-The production site is a static frontend. The Node/Express backend in `backend/` is kept as an optional code sample and for local SMTP testing, but it is not required for production hosting.
+The production site is a static frontend. The Node/Express backend in `backend/` is kept as an optional code sample and for local SMTP testing, but it is not required for production hosting and is excluded from the Vercel deployment via `.vercelignore`.
 
 ## Stack
 
 - HTML, CSS, and vanilla JavaScript for the frontend
-- Static hosting with Vercel or GitHub Pages
+- Static hosting on Vercel, auto-deployed from `main`
 - Optional Node.js, Express, and Nodemailer backend sample
 
 ## Project Structure
@@ -54,7 +54,7 @@ In `index.html`, the `#contactForm` element has a `data-form-endpoint` attribute
 
 The form also includes a hidden honeypot field named `_gotcha` for basic spam filtering.
 
-Important: Vercel and GitHub Pages static hosting do not run the Express backend. Do not use `/api/contact` in production unless the backend is deployed separately.
+Important: Vercel static hosting does not run the Express backend. Do not use `/api/contact` in production unless the backend is deployed separately.
 
 ## Environment Variables
 
