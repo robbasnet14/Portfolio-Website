@@ -139,30 +139,6 @@
         <h2>Research designed to survive contact with out-of-sample data.</h2>
       </div>
       <div class="research-list">
-        <div class="research-card tilt-card">
-          <div>
-            <p class="research-label">Independent Quant Research</p>
-            <h3>Multi-Factor Equity Backtester</h3>
-            <p>
-              Built a Python research pipeline for long-short S&P 500 factor strategies using momentum,
-              value, and quality signals. The project emphasizes point-in-time universe construction,
-              delisted-name handling, realistic trading costs, walk-forward validation, and deflated Sharpe analysis.
-            </p>
-          </div>
-          <div class="research-metrics">
-            <span><strong>2010-2024</strong> test window</span>
-            <span><strong>8 bps</strong> per-trade cost model</span>
-            <span><strong>62</strong> network-mocked tests</span>
-            <span><strong>0.02</strong> out-of-sample Sharpe</span>
-          </div>
-          <p class="research-note">
-            The result was intentionally not over-marketed: the tested naive factor mix did not produce
-            meaningful risk-adjusted returns after costs. That is the point of the work: build research
-            infrastructure that can reject weak ideas instead of dressing them up.
-          </p>
-          <a class="project-action" href="https://github.com/robbasnet14/factor-backtester" target="_blank" rel="noreferrer">Read Research Repo ↗</a>
-        </div>
-
         <div class="research-card tilt-card research-card--progress">
           <div class="research-card-head">
             <div>
@@ -171,6 +147,7 @@
             </div>
             <span class="research-status">Status: Walk-forward experiments running</span>
           </div>
+          <p class="research-built-on">Built on my multi-factor backtesting framework (see <a href="#projects">Projects</a>).</p>
           <div class="research-detail">
             <p><span class="research-detail-label">Question</span>Can ML (gradient boosting / random forest) combine momentum, value, and quality into a better long&ndash;short signal than an equal-weight linear composite &mdash; out-of-sample, US large-caps, after costs?</p>
             <p><span class="research-detail-label">Design</span>Pre-registered null hypothesis: ML does not beat the linear composite OOS after costs. Baseline comes from my backtesting framework, where the equal-weight composite delivers ~0 OOS Sharpe after costs. Same universe, same 8 bps cost model, walk-forward training with purge/embargo, judged on Sharpe, deflated Sharpe, drawdown, and turnover.</p>
@@ -189,43 +166,18 @@
         <p class="eyebrow">Research Principles</p>
         <h2>What I optimize for.</h2>
       </div>
-      <div class="impact-grid">
+      <div class="impact-grid impact-grid--triple">
         <article>
           <h3>No Look-Ahead</h3>
-          <p>Use point-in-time assumptions so a backtest only knows what would have been known then.</p>
+          <p>The backtest only uses data that would have been available at that point in time.</p>
         </article>
         <article>
           <h3>Costs Matter</h3>
-          <p>Include turnover and transaction costs before treating a strategy result as meaningful.</p>
+          <p>Every trade includes transaction costs and turnover.</p>
         </article>
         <article>
           <h3>Out-of-Sample First</h3>
-          <p>Evaluate with walk-forward tests and report weak findings plainly when the edge is not there.</p>
-        </article>
-        <article>
-          <h3>Engineering Discipline</h3>
-          <p>Write tests around the easy-to-get-wrong parts of market data, factor math, and portfolio logic.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="value" class="section shell reveal" data-reveal>
-      <div class="section-head">
-        <p class="eyebrow">Quant Toolkit</p>
-        <h2>How I connect research and implementation.</h2>
-      </div>
-      <div class="value-grid">
-        <article>
-          <h3>Research Engineering</h3>
-          <p>Build reproducible pipelines, clean interfaces, and testable assumptions around data and strategy logic.</p>
-        </article>
-        <article>
-          <h3>Market Analytics</h3>
-          <p>Work across prices, fundamentals, news sentiment, predictions, portfolios, and live dashboards.</p>
-        </article>
-        <article>
-          <h3>Software Reliability</h3>
-          <p>Use backend systems, caches, APIs, WebSockets, and validation checks to make tools usable beyond notebooks.</p>
+          <p>Every result is tested on data the model has not seen.</p>
         </article>
       </div>
     </section>
@@ -237,17 +189,25 @@
       </div>
 
       <div class="project-grid">
-        <article class="project-card reveal tilt-card" data-reveal>
+        <article class="project-card reveal tilt-card project-card--flagship" data-reveal>
           <div class="project-tag">Quant Research</div>
-          <h3>Factor Backtester</h3>
+          <h3>Factor Backtester <span class="project-mini-label">Flagship</span></h3>
           <p>
-            Multi-factor equity backtesting framework for long-short S&P 500 strategies with point-in-time
-            universe construction, realistic costs, walk-forward validation, and deflated Sharpe reporting.
+            Built a Python research pipeline for long-short S&P 500 factor strategies using momentum,
+            value, and quality signals. The project emphasizes point-in-time universe construction,
+            delisted-name handling, realistic trading costs, walk-forward validation, and deflated Sharpe analysis.
           </p>
-          <ul>
-            <li>Python, pandas, market data pipelines, SEC EDGAR, Yahoo Finance, Tiingo fallback</li>
-            <li>Found no meaningful out-of-sample edge in the naive factor mix after costs</li>
-          </ul>
+          <div class="research-metrics">
+            <span><strong>2010-2024</strong> test window</span>
+            <span><strong>8 bps</strong> per-trade cost model</span>
+            <span><strong>62</strong> network-mocked tests</span>
+            <span><strong>0.02</strong> out-of-sample Sharpe</span>
+          </div>
+          <p class="research-note">
+            The result was intentionally not over-marketed: the tested naive factor mix did not produce
+            meaningful risk-adjusted returns after costs. That is the point of the work: build research
+            infrastructure that can reject weak ideas instead of dressing them up.
+          </p>
           <div class="project-links">
             <a class="project-action" href="https://github.com/robbasnet14/factor-backtester" target="_blank" rel="noreferrer">Repo ↗</a>
           </div>

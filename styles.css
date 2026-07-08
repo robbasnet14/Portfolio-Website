@@ -450,6 +450,12 @@ p {
   white-space: nowrap;
 }
 
+.research-built-on {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .research-detail {
   margin-top: 0.9rem;
   display: flex;
@@ -499,26 +505,8 @@ p {
   margin-top: 0.28rem;
 }
 
-.value-grid {
-  display: grid;
+.impact-grid--triple {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
-}
-
-.value-grid article {
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.value-grid h3 {
-  font-size: 1.08rem;
-}
-
-.value-grid p {
-  color: var(--muted);
-  margin-top: 0.35rem;
 }
 
 .project-grid {
@@ -541,6 +529,11 @@ p {
 
 .project-card:hover {
   border-color: rgba(127, 236, 255, 0.65);
+}
+
+.project-card--flagship {
+  grid-column: 1 / -1;
+  background: linear-gradient(160deg, rgba(97, 213, 255, 0.08), rgba(255, 255, 255, 0.015));
 }
 
 .project-card::before {
@@ -918,7 +911,6 @@ body.motion-bold .project-card:hover {
   .research-metrics,
   .exp-grid,
   .impact-grid,
-  .value-grid,
   .working-style-grid {
     grid-template-columns: 1fr;
   }
