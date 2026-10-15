@@ -77,11 +77,10 @@
         <div class="quick-facts">
           <span>B.S. Computer Science • May 2027</span>
           <span>Minors: Math + Data Science</span>
-          <span>Targeting quant research & trading internships</span>
+          <span>Seeking full-time SWE &amp; quant research roles, June 2027</span>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary magnetic" href="#projects">View Projects</a>
-          <a class="btn btn-ghost magnetic" href="Robs-Resume-Latest.pdf" target="_blank" rel="noreferrer">View Resume</a>
         </div>
         <div class="motion-controls" aria-label="Animation intensity controls">
           <span>Motion:</span>
@@ -93,7 +92,7 @@
       <div class="hero-media" id="heroMedia">
         <img src="Image/Rob.jpeg" alt="Portrait of Rob Basnet" />
         <div class="hero-card reveal" data-reveal>
-          <p>Open to Summer 2027 quant research and software internships.</p>
+          <p>Seeking full-time new-grad software engineering and quantitative research roles, starting June 2027.</p>
         </div>
       </div>
     </section>
@@ -131,6 +130,32 @@
           </article>
         </div>
       </div>
+
+      <div class="working-style" id="correction">
+        <div class="research-card">
+          <p class="research-label">Correction, 2026-10-07</p>
+          <h3>A look-ahead leak in my own published value factor</h3>
+          <p>
+            After publishing, I found a look-ahead leak in my own value factor: earnings per share as filed
+            were divided by prices adjusted for every later stock split (and, more mildly, later dividends),
+            inflating each stock's earnings yield by its own future split factor. I corrected the engine,
+            re-ran the full pre-registered grid, and published the correction with the original numbers
+            kept beside the new ones.
+          </p>
+          <div class="research-metrics">
+            <span><strong>+0.0111 &rarr; &minus;0.0051</strong> value-factor IC</span>
+            <span><strong>t = 1.26 &rarr; &minus;0.48</strong> IC t-statistic</span>
+            <span><strong>3 of 8 &rarr; 0 of 8</strong> ML configs beating baseline</span>
+            <span><strong>0.066 &rarr; &minus;0.174</strong> baseline OOS Sharpe</span>
+          </div>
+          <p class="research-note">
+            The apparent ML edge disappeared entirely. The null result survived and got stronger.
+          </p>
+          <div class="project-links">
+            <a class="project-action" href="https://github.com/robbasnet14/ml-vs-linear-factors#correction-2026-10-07" target="_blank" rel="noreferrer">Read the Correction &#8599;</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="research" class="section shell reveal" data-reveal>
@@ -139,25 +164,29 @@
         <h2>Research designed to survive contact with out-of-sample data.</h2>
       </div>
       <div class="research-list">
-        <div class="research-card tilt-card research-card--progress">
+        <div class="research-card tilt-card">
           <div class="research-card-head">
             <div>
-              <p class="research-label">Independent Research, 2026 (In Progress)</p>
-              <h3>Can Machine Learning Improve a Multi-Factor Long&ndash;Short Equity Signal? An Out-of-Sample Comparison After Costs</h3>
+              <p class="research-label">Independent Research, 2026</p>
+              <h3>Does Machine Learning Beat a Linear Factor Combination? A Pre-Registered, Cost-Aware Test</h3>
             </div>
-            <span class="research-status">Status: Walk-forward experiments running</span>
+            <span class="research-status">Published 2026-09-23 &bull; Corrected 2026-10-07</span>
           </div>
           <p class="research-built-on">Built on my multi-factor backtesting framework (see <a href="#projects">Projects</a>).</p>
           <div class="research-detail">
             <p><span class="research-detail-label">Question</span>Can ML (gradient boosting / random forest) combine momentum, value, and quality into a better long&ndash;short signal than an equal-weight linear composite &mdash; out-of-sample, US large-caps, after costs?</p>
-            <p><span class="research-detail-label">Design</span>Pre-registered null hypothesis: ML does not beat the linear composite OOS after costs. Baseline comes from my backtesting framework, where the equal-weight composite delivers ~0 OOS Sharpe after costs. Same universe, same 8 bps cost model, walk-forward training with purge/embargo, judged on Sharpe, deflated Sharpe, drawdown, and turnover.</p>
-            <p><span class="research-detail-label">Deliverable</span>6&ndash;8 page paper (PDF) plus a public repo; the ML combiner is a small addition on top of the existing backtesting engine.</p>
+            <p><span class="research-detail-label">Design</span>Pre-registered null hypothesis: ML does not beat the linear composite OOS after costs. Same universe, same 8 bps cost model, walk-forward training with purge/embargo, judged on Sharpe, deflated Sharpe, drawdown, and turnover.</p>
+            <p><span class="research-detail-label">Result</span>The pre-registered null holds. Every one of the 8 ML configurations is worse than the linear baseline out of sample after costs: ML Sharpe &minus;0.590 to &minus;0.361, against &minus;0.174 for the baseline. Zero of eight beat it.</p>
           </div>
           <p class="research-note">
-            The honest, pre-registered design is the point, not a placeholder for it. No results are posted
-            here until the walk-forward experiments finish &mdash; including if the null hypothesis holds.
+            This is the corrected result. After publishing, I found and fixed a look-ahead leak in my own
+            value factor (see <a href="#correction">Correction</a>); the original numbers are kept beside the new ones.
           </p>
-          <a class="project-action" href="https://github.com/robbasnet14/ml-vs-linear-factors" target="_blank" rel="noreferrer">View Pre-Registration &amp; Repo &#8599;</a>
+          <div class="project-links">
+            <a class="project-action" href="https://github.com/robbasnet14/ml-vs-linear-factors/blob/main/paper/ml-vs-linear-factors.pdf" target="_blank" rel="noreferrer">View Paper (PDF) &#8599;</a>
+            <a class="project-action" href="https://github.com/robbasnet14/ml-vs-linear-factors/blob/main/PREREGISTRATION.md" target="_blank" rel="noreferrer">Pre-Registration &#8599;</a>
+            <a class="project-action" href="https://github.com/robbasnet14/ml-vs-linear-factors" target="_blank" rel="noreferrer">Repo &#8599;</a>
+          </div>
         </div>
       </div>
     </section>
@@ -194,20 +223,27 @@
           <div class="project-tag">Quant Research</div>
           <h3>Factor Backtester <span class="project-mini-label">Flagship</span></h3>
           <p>
-            Built a Python research pipeline for long-short S&P 500 factor strategies using momentum,
-            value, and quality signals. The project emphasizes point-in-time universe construction,
-            delisted-name handling, realistic trading costs, walk-forward validation, and deflated Sharpe analysis.
+            A pip-installable Python library (v1.0.0) for backtesting long-short S&P 500 factor strategies
+            on momentum, value, and quality, with a <code>factor-backtest</code> CLI and a plugin registry
+            where a new factor is one dropped file. It handles point-in-time universe construction,
+            delisted names, realistic trading costs, walk-forward validation, and deflated Sharpe analysis.
           </p>
+          <ul>
+            <li>Found and fixed two correctness bugs in my own engine: it could hold delisted stocks in months they never traded, and a split-basis look-ahead leak in the value factor was worth about 0.17 of Sharpe</li>
+            <li>Refactored a 704-line data-access module into typed provider Protocols (Yahoo, Tiingo, SEC EDGAR); a new data source is one file implementing one interface</li>
+            <li>Every run reports gross, flat 8 bps, and per-name cost models side by side, so the cost assumption is shown rather than asserted</li>
+            <li>153 pytest tests; CI runs ruff, mypy, and pytest across a pandas 2.x / 3.x matrix. Docker image, MIT license</li>
+          </ul>
           <div class="research-metrics">
             <span><strong>2010-2024</strong> test window</span>
             <span><strong>8 bps</strong> per-trade cost model</span>
-            <span><strong>62</strong> network-mocked tests</span>
-            <span><strong>0.02</strong> out-of-sample Sharpe</span>
+            <span><strong>153</strong> pytest tests</span>
+            <span><strong>&minus;0.16</strong> out-of-sample Sharpe</span>
           </div>
           <p class="research-note">
-            The result was intentionally not over-marketed: the tested naive factor mix did not produce
-            meaningful risk-adjusted returns after costs. That is the point of the work: build research
-            infrastructure that can reject weak ideas instead of dressing them up.
+            Correcting those two bugs moved the out-of-sample Sharpe from 0.02 to &minus;0.16. The naive factor
+            mix has no edge, and costs are not the reason: gross of costs it is still &minus;0.14. That is the
+            point of the work: build research infrastructure that can reject weak ideas instead of dressing them up.
           </p>
           <div class="project-links">
             <a class="project-action" href="https://github.com/robbasnet14/factor-backtester" target="_blank" rel="noreferrer">Repo ↗</a>
@@ -235,12 +271,15 @@
           <div class="project-tag">Machine Learning</div>
           <h3>Soccer Match Prediction Platform</h3>
           <p>
-            Trained five Random Forest models to forecast outcomes, xG, and betting markets, then calibrated
-            probabilities with Isotonic Regression for stronger prediction reliability.
+            FastAPI prediction service and React dashboard backed by six models: four Random Forest classifiers
+            (match outcome, Over 2.5, Over 3.5, BTTS) and two Random Forest regressors (home and away goals), with
+            the classifiers' probabilities calibrated by Isotonic Regression.
           </p>
           <ul>
-            <li>Python, scikit-learn, React 19, Vite, Tailwind</li>
-            <li>Live prediction dashboard with win probabilities and scoreline candidates</li>
+            <li>Migrated from a single-threaded stdlib server to FastAPI: <code>/health</code> latency during a cold model-training request fell from 14.5 s to 3 ms</li>
+            <li>Found and fixed a data-leakage defect (fallback priors averaged over future matches); its regression test fails against the previous implementation</li>
+            <li>HMAC-SHA256-verified model artifact loaded from S3-compatible storage; Docker image packaged for AWS Lambda</li>
+            <li>Python, FastAPI, scikit-learn, Docker, React 19, Vite, Tailwind</li>
           </ul>
           <div class="project-links">
             <a class="project-action" href="https://github.com/robbasnet14/Pl-match-prediction" target="_blank" rel="noreferrer">Repo ↗</a>
@@ -255,8 +294,8 @@
             actionable improvement suggestions.
           </p>
           <ul>
-            <li>Python, FastAPI, scikit-learn, Docker, React</li>
-            <li>REST API with Pydantic validation and containerized deployment</li>
+            <li>Python, FastAPI, scikit-learn, Docker</li>
+            <li>REST API with Pydantic request and response validation</li>
           </ul>
           <div class="project-links">
             <a class="project-action" href="https://github.com/robbasnet14/Resume-Analyzer" target="_blank" rel="noreferrer">Repo ↗</a>
@@ -267,7 +306,7 @@
           <div class="project-tag">Data + Backend</div>
           <h3>Premier League Club & Player Database</h3>
           <p>
-            Developed a full-stack stats platform serving 500+ players with multi-filter search, integrating a Python
+            Developed a full-stack stats platform serving 456 players with multi-filter search, integrating a Python
             data pipeline with a Spring Boot backend and React frontend.
           </p>
           <ul>
@@ -293,15 +332,19 @@
         </div>
         <div class="skill-lane-group">
           <p class="skill-lane-title">Quant / Data</p>
-          <div class="skill-lane"><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>TA-Lib</span><span>statsmodels</span><span>Random Forest</span><span>Isotonic Regression</span><span>TF-IDF</span><span>Backtesting</span><span>Time series</span></div>
+          <div class="skill-lane"><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>HuggingFace</span><span>TA-Lib</span><span>Random Forest</span><span>Isotonic Regression</span><span>TF-IDF</span><span>Backtesting</span><span>Time series</span></div>
         </div>
         <div class="skill-lane-group">
           <p class="skill-lane-title">Frameworks</p>
-          <div class="skill-lane"><span>FastAPI</span><span>React</span><span>Spring Boot</span><span>Node.js</span><span>Express</span><span>GraphQL</span><span>Tailwind</span></div>
+          <div class="skill-lane"><span>FastAPI</span><span>React</span><span>Spring Boot</span><span>Node.js</span><span>Express</span><span>Tailwind</span></div>
         </div>
         <div class="skill-lane-group">
           <p class="skill-lane-title">Infrastructure</p>
           <div class="skill-lane"><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>WebSockets</span><span>Git</span><span>REST</span><span>JWT</span><span>Vercel</span><span>CI/CD</span></div>
+        </div>
+        <div class="skill-lane-group">
+          <p class="skill-lane-title">Testing &amp; Quality</p>
+          <div class="skill-lane"><span>pytest</span><span>mypy</span><span>ruff</span><span>GitHub Actions</span></div>
         </div>
         <div class="skill-lane-group">
           <p class="skill-lane-title">Financial Data</p>
@@ -326,60 +369,27 @@
         <h2>Leadership &amp; Campus Experience</h2>
       </div>
 
-      <p class="skill-lane-title">Campus and Team Contributions</p>
-      <div class="impact-grid">
+      <div class="exp-grid">
         <article>
-          <h3>Resident Assistant</h3>
-          <p>Support first-year students through guidance, conflict resolution, and inclusive floor programming.</p>
+          <h3>Resident Assistant Lead</h3>
+          <p class="exp-meta">Gettysburg College • Aug 2025 - Present</p>
+          <p>Mentor 38+ residents, run 5+ community events per semester, and grew floor participation by 40%.</p>
         </article>
         <article>
-          <h3>OME Coordinator</h3>
-          <p>Coordinate events for first-generation and underrepresented students with campus partners.</p>
+          <h3>Peer Learning Assistant (Calculus)</h3>
+          <p class="exp-meta">Gettysburg College • Aug 2024 - Present</p>
+          <p>Help students break down calculus problems and build confidence in their problem-solving skills.</p>
         </article>
         <article>
-          <h3>Student Lead</h3>
-          <p>Oversee daily operations, mentor staff, and manage high-volume workflows with safety standards.</p>
+          <h3>OME Program Coordinator</h3>
+          <p class="exp-meta">Gettysburg College • Sep 2024 - Present</p>
+          <p>Plan events and cultural-awareness programs for first-generation and underrepresented students.</p>
         </article>
         <article>
-          <h3>SANGAM President</h3>
-          <p>Lead cultural events including Holi and Diwali, coordinating volunteers and event execution.</p>
+          <h3>Student Lead, Bullet Hole</h3>
+          <p class="exp-meta">Gettysburg, PA • Aug 2023 - Present</p>
+          <p>Run day-to-day operations, mentor teammates, and manage fast-paced service periods.</p>
         </article>
-      </div>
-
-      <div class="leadership-roles">
-        <p class="skill-lane-title">Roles</p>
-        <div class="exp-grid">
-          <article>
-            <h3>Resident Assistant Lead</h3>
-            <p class="exp-meta">Gettysburg College • Aug 2025 - Present</p>
-            <p>Mentor 38+ residents, run 5+ community events per semester, and grew floor participation by 40%.</p>
-          </article>
-          <article>
-            <h3>OME Program Coordinator</h3>
-            <p class="exp-meta">Gettysburg College • Sep 2024 - Present</p>
-            <p>Plan events and cultural-awareness programs for first-generation and underrepresented students.</p>
-          </article>
-          <article>
-            <h3>Student Lead, Bullet Hole</h3>
-            <p class="exp-meta">Gettysburg, PA • Aug 2023 - Present</p>
-            <p>Run day-to-day operations, mentor teammates, and manage fast-paced service periods.</p>
-          </article>
-          <article>
-            <h3>Peer Learning Assistant (Calculus)</h3>
-            <p class="exp-meta">Gettysburg College • Aug 2024 - Present</p>
-            <p>Help students break down calculus problems and build confidence in their problem-solving skills.</p>
-          </article>
-          <article>
-            <h3>Tour Guide</h3>
-            <p class="exp-meta">Gettysburg College • Aug 2024 - Present</p>
-            <p>Lead campus tours and answer questions from students and families about academics and student life.</p>
-          </article>
-          <article>
-            <h3>ACM Member</h3>
-            <p class="exp-meta">Gettysburg College • Sep 2023 - Present</p>
-            <p>Compete in hackathons and algorithmic coding challenges in Python, Java, and C++.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -390,7 +400,7 @@
         <p>Email: <a href="mailto:basnro01@gettysburg.edu">basnro01@gettysburg.edu</a></p>
         <p>GitHub: <a href="https://github.com/robbasnet14" target="_blank" rel="noreferrer">github.com/robbasnet14</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/rob-basnet-0065a52a8/" target="_blank" rel="noreferrer">linkedin.com/in/rob-basnet-0065a52a8</a></p>
-        <p>Availability: Summer 2027 quant research / trading / software internships.</p>
+        <p>Availability: Seeking full-time new-grad software engineering and quantitative research roles, starting June 2027.</p>
         <form id="contactForm" class="contact-form" data-form-endpoint="">
           <label for="contactName">Name</label>
           <input id="contactName" name="name" type="text" required maxlength="80" />

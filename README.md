@@ -21,7 +21,6 @@ The production site is a static frontend. The Node/Express backend in `backend/`
 ├── script.js
 ├── Image/
 ├── Icons/
-├── Robs-Resume-Latest.pdf
 └── backend/
     ├── backend.js
     ├── package.json
